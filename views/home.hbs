@@ -3,8 +3,13 @@
 {{#if showList}}
   Fruit!
   <ul>
-    {{#each fruitList}}
-      {{> fruit}}
+    {{#each repoList}}
+    <li>
+      <a href={{html_url}}>
+        {{name}}
+      </a>
+    </li>
+
     {{/each}}
   </ul>
   Ok, now you can <a href="/">hide the list</a>.
