@@ -20,4 +20,4 @@ function getDetails (name) {
     return repo.name === name
   })
   return results[0]
-  }
+}
