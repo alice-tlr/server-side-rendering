@@ -1,14 +1,16 @@
-{{> header}}
-  {{name}}
-  <ul>
-    <li>
-      {{html_url}}
-      </a>
-    </li>
-    <li>
-      {{id}}
-    </li>
-    <li>
-      {{description}}
-    </li>
-  </ul>
+<div id="{{}}" class ="details">
+  <a href="/author/{{owner.id}}">{{owner.login}}</a>
+  {{> header}}
+    {{name}}
+    <ul>
+      <li>
+        {{html_url}}
+      </li>
+      <li>
+        {{id}}
+      </li>
+      <li>
+        {{description}}
+      </li>
+    </ul>
+</div>
