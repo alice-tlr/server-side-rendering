@@ -1,32 +1,34 @@
+var fs = require('fs')
+var path = require('path')
+
+var githubRepos = require ('./github.json')
+var dataPath = path.join(__dirname, 'github.json')
+
 //module.exports is the object that's actually returned as the result of a require call.
 module.exports = {
-  getHomeData: getHomeData,
-  getDetails: getDetails,
-  getAuthor: getAuthor
-}
-
-var repos = require('./github.js')
-
-
+  getHomeData: getHomeData
+//   getDetails: getDetails,
+//   getAuthor: getAuthor,
+//   readData: readData
+ }
 
 function getHomeData () {
-  return {
-    title: 'Awesome title',
-    headerText: 'Welcome to Awesome',
-    repoList: repos
+  //sync
+  return githubRepos// returing an array synchronusly
+}
+
+function readData(callback) {
+  fs.readFile (dataPath, 'utf8', callback)
+}
+
+function showContents (err, data) {
+  if (err) {
+    console.log('Error:', err.message)
+  } else {
+    var json = data
+    var obj = JSON.parse(json)
+    return obj//this was console.log to show that we have the content of the github.json
   }
 }
 
-function getDetails (name) {
-  var results = repos.filter(function (repo) {
-    return repo.name === name
-  })
-  return results[0]
-}
-
-function getAuthor (name) {
-  var results = repos.filter(function (repo) {
-    return repo.name === name
-  })
-  return results[0]
-}
+ // readData(dataPath, showContents)
