@@ -1,20 +1,24 @@
 var fs = require('fs')
 var path = require('path')
 
-var githubRepos = require ('./github.json')
+var githubRepos = require ('./github')
 var dataPath = path.join(__dirname, 'github.json')
 
 //module.exports is the object that's actually returned as the result of a require call.
 module.exports = {
-  getHomeData: getHomeData
+  getHomeData: getHomeData,
+  getAuthor: getAuthor
 //   getDetails: getDetails,
-//   getAuthor: getAuthor,
 //   readData: readData
  }
 
 function getHomeData () {
   //sync
   return githubRepos// returing an array synchronusly
+}
+
+function getAuthor () {
+  return githubRepos.filter.Number(id)
 }
 
 function readData(callback) {

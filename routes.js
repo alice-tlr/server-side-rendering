@@ -8,12 +8,15 @@ module.exports = {
 }
 
 function home (req, res) {
+  /*
   var repos = db.getHomeData() //returns an array
   var vm = { //we need to apply a obj to the  template
     showList: req.query.showlist,
     repoList: repos
   }
   res.render('home', vm)// doing the template rendeering
+  */
+  res.send("Does this work?")
 }
 
 // function details (req, res) {}

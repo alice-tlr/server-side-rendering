@@ -18,12 +18,9 @@ app.engine('hbs', hbs({
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 
-var hbs = require('express-handlebars')
 
 
 // Routes refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on). Each route can have one or more handler functions, which are executed when the route is matched
-app.get('/', routes.home)
-app.get('/details/:id/author', routes.author)
-app.get('/details/:name', routes.details)
-
-// app.get('/author/:id', routes.author)
+//app.get('/', routes.home)
+//app.get('/details/:id/author', routes.author)
+//app.get('/details/:name', routes.details)
